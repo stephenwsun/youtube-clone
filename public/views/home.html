@@ -1,3 +1,13 @@
 <div ng-controller="VideoController" ng-init="getChannelData()">
 
+  <div ng-repeat="video in videos">
+    <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank" rel="noopener noreferrer">
+      <img ng-src={{video.snippet.thumbnails.medium.url}} alt="Video Image" />
+    </a>
+
+  </div>
+
+  <div ng-repeat="channel in channels">
+    <img ng-src={{channel.snippet.thumbnails.medium.url}} alt="Channel Image" />
+  </div>
 </div>

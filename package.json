@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --watch --include-path sass ./public/styles/main.scss ./public/styles/main.css"
   },
   "author": "Stephen Sun",
   "license": "ISC",
@@ -14,5 +15,8 @@
     "express": "^4.16.3",
     "request": "^2.88.0",
     "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.3"
   }
 }

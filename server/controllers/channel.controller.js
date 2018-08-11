@@ -1,41 +1,41 @@
 var request = require('request');
 
-exports.channel = function(req, res) {
-  const options1 = {
-    method: 'GET',
-    url: 'https://www.googleapis.com/youtube/v3/channels',
-    qs: {
-      id: 'UCKPbQfwD_EoQtCKetDVDUmQ',
-      part: 'snippet,contentDetails,statistics',
-      key: process.env.YOUTUBE_DATA_KEY
-    },
-    json: true
-  };
-
-  const options2 = {
+exports.videos = function(req, res) {
+  const options = {
     method: 'GET',
     url: 'https://www.googleapis.com/youtube/v3/search',
     qs: {
-      channelId: 'UCKPbQfwD_EoQtCKetDVDUmQ',
+      type: 'video',
+      q: 'coding',
       part: 'snippet',
+      maxResults: '20',
       key: process.env.YOUTUBE_DATA_KEY
     },
     json: true
   };
 
-  const options3 = {
+  request(options, function (error, response, body) {
+    console.log('error:', error); // Print the error if one occurred and handle it
+    console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+    res.send(body);
+  });
+}
+
+exports.channels = function(req, res) {
+  const options = {
     method: 'GET',
-    url: 'https://www.googleapis.com/youtube/v3/activities',
+    url: 'https://www.googleapis.com/youtube/v3/search',
     qs: {
-      'channelId': 'UCKPbQfwD_EoQtCKetDVDUmQ',
-      'maxResults': '25',
-      'part': 'snippet,contentDetails',
-      'key': process.env.YOUTUBE_DATA_KEY
+      type: 'channel',
+      q: 'coding',
+      part: 'snippet',
+      maxResults: '20',
+      key: process.env.YOUTUBE_DATA_KEY
     },
     json: true
   };
 
-  request(options3, function (error, response, body) {
+  request(options, function (error, response, body) {
     console.log('error:', error); // Print the error if one occurred and handle it
     console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
     res.send(body);
