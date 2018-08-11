@@ -298,4 +298,12 @@ template {
   display: none; }
 
 body {
-  color: #5D6063; }
+  color: #5D6063;
+  font-family: 'Roboto', sans-serif; }
+
+section#most-popular .most-popular__title {
+  font-size: 16px; }
+
+section#most-popular .most-popular__videos .videos__img {
+  width: 210px;
+  font-weight: 700; }

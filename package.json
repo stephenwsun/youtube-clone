@@ -4,7 +4,7 @@
   "description": "YouTube Clone",
   "main": "app.js",
   "scripts": {
-    "start": "node ./server/app.js",
+    "start": "nodemon ./server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass --watch --include-path sass ./public/styles/main.scss ./public/styles/main.css"
   },
@@ -17,6 +17,7 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "node-sass": "^4.9.3"
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.3"
   }
 }

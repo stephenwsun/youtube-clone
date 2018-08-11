@@ -1,11 +1,17 @@
 <div ng-controller="VideoController" ng-init="getChannelData()">
 
-  <div ng-repeat="video in videos">
-    <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" target="_blank" rel="noopener noreferrer">
-      <img ng-src={{video.snippet.thumbnails.medium.url}} alt="Video Image" />
+  <section id="most-popular">
+    <div class="most-popular__title">Most Popular</div>
+    <a class="most-popular__videos" href="https://www.youtube.com/watch?v={{video.id}}" target="_blank" rel="noopener noreferrer"
+      ng-repeat="video in videos">
+      <img class="videos__img" ng-src={{video.snippet.thumbnails.medium.url}} alt="Video Image" />
+      <h1>{{video.snippet.title}}</h1>
+      <h3>{{video.snippet.channelTitle}}</h3>
+      <div>{{video.statistics.viewCount}}</div>
+      <div>{{video.snippet.publishedAt}}</div>
     </a>
 
-  </div>
+  </section>
 
   <div ng-repeat="channel in channels">
     <img ng-src={{channel.snippet.thumbnails.medium.url}} alt="Channel Image" />

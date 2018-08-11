@@ -3,11 +3,11 @@ var request = require('request');
 exports.videos = function(req, res) {
   const options = {
     method: 'GET',
-    url: 'https://www.googleapis.com/youtube/v3/search',
+    url: 'https://www.googleapis.com/youtube/v3/videos',
     qs: {
-      type: 'video',
-      q: 'coding',
-      part: 'snippet',
+      chart: 'mostPopular',
+      regionCode: 'US',
+      part: 'snippet,contentDetails,statistics',
       maxResults: '20',
       key: process.env.YOUTUBE_DATA_KEY
     },
