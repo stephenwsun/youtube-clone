@@ -13,15 +13,15 @@
           </a>
           <h1 class="video__title">{{video.snippet.title}}</h1>
           <h3 class="video__channel-name">{{video.snippet.channelTitle}}</h3>
-          <div class="video__view-count">{{video.statistics.viewCount}} views</div>
-          <div class="video__create-date">{{video.snippet.publishedAt}}</div>
+          <div class="video__view-count">{{video.statistics.viewCount}} views •</div>
+          <div class="video__like-count">{{video.statistics.likeCount}} likes</div>
         </div>
       </div>
     </section>
 
-    <section id="channels">
+    <!-- <section id="channels">
       <img ng-src={{channel.snippet.thumbnails.medium.url}} alt="Channel Image" ng-repeat="channel in channels" />
-    </section>
+    </section> -->
   </section>
 
 

@@ -2,13 +2,27 @@
 <html lang="en" ng-app="YoutubeClone">
 
 <head>
-  <title>YouTube Clone</title>
+  <title>YouTube Dark</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet" />
   <base href="/" />
 </head>
+
+<nav id="top-nav">
+  <ng-include src="'images/youtube.svg'"></ng-include>
+  <div class="top-nav__search">
+    <input type="text" placeholder="Search" />
+    <ng-include src="'images/search.svg'"></ng-include>
+  </div>
+  <ul>
+    <ng-include src="'images/broadcast.svg'"></ng-include>
+    <ng-include src="'images/grid.svg'"></ng-include>
+    <ng-include src="'images/messenger.svg'"></ng-include>
+    <ng-include src="'images/bell.svg'"></ng-include>
+  </ul>
+</nav>
 
 <body ng-controller="VideoController">
   <div ng-view></div>

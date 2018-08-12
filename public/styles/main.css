@@ -302,6 +302,15 @@ body {
   background-color: #141414;
   font-family: 'Roboto', sans-serif; }
 
+nav#top-nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 56px;
+  background: #1C1C1C; }
+
 .home-wrapper {
   display: flex; }
 
@@ -309,9 +318,12 @@ body {
   position: fixed;
   width: 240px;
   height: 100%;
-  background-color: #232323; }
+  margin-top: 56px;
+  background: #232323; }
 
 section#content-wrapper {
+  width: 100%;
+  margin-top: 56px;
   margin-left: 240px; }
 
 section#most-popular .most-popular__title {
@@ -324,23 +336,25 @@ section#most-popular .most-popular__wrapper {
   max-width: calc(100vw - 240px); }
 
 section#most-popular .most-popular__video {
-  width: 210px;
-  padding: 10px;
+  width: 220px;
   margin-bottom: 25px; }
   section#most-popular .most-popular__video .video__img {
-    width: 210px;
+    width: 220px;
     font-weight: 700; }
   section#most-popular .most-popular__video .video__title {
-    width: 210px;
+    width: 220px;
     font-size: 14px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
   section#most-popular .most-popular__video .video__channel-name {
+    color: #888880;
     font-size: 13px;
     font-weight: 400; }
   section#most-popular .most-popular__video .video__view-count,
-  section#most-popular .most-popular__video .video__create-date {
+  section#most-popular .most-popular__video .video__like-count {
+    display: inline-block;
+    color: #888880;
     font-size: 13px; }
 
 section#channels {

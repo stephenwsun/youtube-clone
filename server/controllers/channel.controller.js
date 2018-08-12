@@ -8,7 +8,7 @@ exports.videos = function(req, res) {
       chart: 'mostPopular',
       regionCode: 'US',
       part: 'snippet,contentDetails,statistics',
-      maxResults: '20',
+      maxResults: '24',
       key: process.env.YOUTUBE_DATA_KEY
     },
     json: true
@@ -29,7 +29,7 @@ exports.channels = function(req, res) {
       type: 'channel',
       q: 'coding',
       part: 'snippet',
-      maxResults: '20',
+      maxResults: '24',
       key: process.env.YOUTUBE_DATA_KEY
     },
     json: true
