@@ -7,4 +7,64 @@ nav#top-nav {
   height: 56px;
   background: $darkblack;
 
+  .top-nav__left {
+    padding-left: 30px;
+
+    .left__hamburger-icon {
+      margin-right: 20px;
+    }
+  }
+
+  .top-nav__center {
+    #search-form {
+      display: flex;
+      .form__input {
+        width: 575px;
+        padding: 6px 5px;
+        color: #DFDFDF;
+        background: $black;
+        border: 1px solid $darkcharcoal;
+        border-radius: 2px 0 0 2px;
+        outline: none;
+
+        &:focus {
+          border: 1px solid #1c62b9;
+        }
+
+        ::placeholder {
+          color: #5D5D5D;
+        }
+      }
+
+      .form__button {
+        width: 65px;
+        height: 32px;
+        background: $darkcharcoal;
+        border: 1px solid $darkcharcoal;
+        border-radius: 0 2px 2px 0;
+      }
+    }
+  }
+
+  .top-nav__right {
+    display: flex;
+    height: 56px;
+    padding-right: 30px;
+
+    .right__menu {
+      .menu__grid-icon,
+      .menu__messenger-icon,
+      .menu__bell-icon {
+        margin-left: 20px;
+      }
+    }
+
+    .right__avatar {
+      width: 32px;
+      height: 32px;
+      margin-top: 12px;
+      margin-left: 20px;
+      border-radius: 50%;
+    }
+  }
 }

@@ -310,6 +310,44 @@ nav#top-nav {
   width: 100vw;
   height: 56px;
   background: #1C1C1C; }
+  nav#top-nav .top-nav__left {
+    padding-left: 30px; }
+    nav#top-nav .top-nav__left .left__hamburger-icon {
+      margin-right: 20px; }
+  nav#top-nav .top-nav__center #search-form {
+    display: flex; }
+    nav#top-nav .top-nav__center #search-form .form__input {
+      width: 575px;
+      padding: 6px 5px;
+      color: #DFDFDF;
+      background: #141414;
+      border: 1px solid #343434;
+      border-radius: 2px 0 0 2px;
+      outline: none; }
+      nav#top-nav .top-nav__center #search-form .form__input:focus {
+        border: 1px solid #1c62b9; }
+      nav#top-nav .top-nav__center #search-form .form__input ::placeholder {
+        color: #5D5D5D; }
+    nav#top-nav .top-nav__center #search-form .form__button {
+      width: 65px;
+      height: 32px;
+      background: #343434;
+      border: 1px solid #343434;
+      border-radius: 0 2px 2px 0; }
+  nav#top-nav .top-nav__right {
+    display: flex;
+    height: 56px;
+    padding-right: 30px; }
+    nav#top-nav .top-nav__right .right__menu .menu__grid-icon,
+    nav#top-nav .top-nav__right .right__menu .menu__messenger-icon,
+    nav#top-nav .top-nav__right .right__menu .menu__bell-icon {
+      margin-left: 20px; }
+    nav#top-nav .top-nav__right .right__avatar {
+      width: 32px;
+      height: 32px;
+      margin-top: 12px;
+      margin-left: 20px;
+      border-radius: 50%; }
 
 .home-wrapper {
   display: flex; }
