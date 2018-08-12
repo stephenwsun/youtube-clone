@@ -1,6 +1,30 @@
 <div class="home-wrapper" ng-controller="VideoController" ng-init="getChannelData()">
   <div class="side-nav">
+    <div class="side-nav__main">
+      <button class="main__home">
+        <ng-include src="'../images/side-nav/home.svg'"></ng-include>
+        <div class="home__title">Home</div>
+      </button>
 
+      <button class="main__trending">
+        <ng-include src="'../images/side-nav/fire.svg'"></ng-include>
+        <div class="trending__title">Trending</div>
+      </button>
+
+      <button class="main__subscriptions">
+        <ng-include src="'../images/side-nav/subscriptions.svg'"></ng-include>
+        <div class="subscriptions__title">Subscriptions</div>
+      </button>
+
+
+
+    </div>
+    <div class="side-nav__library">
+      <div class="library__title">Library</div>
+      <ng-include src="'../images/side-nav/history.svg'"></ng-include>
+      <ng-include src="'../images/side-nav/clock.svg'"></ng-include>
+      <ng-include src="'../images/side-nav/like.svg'"></ng-include>
+    </div>
   </div>
 
   <section id="content-wrapper">
