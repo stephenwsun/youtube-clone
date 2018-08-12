@@ -5,8 +5,8 @@
 
   <section id="content-wrapper">
     <section id="most-popular">
-      <div class="most-popular__title">Most Popular</div>
       <div class="most-popular__wrapper">
+        <div class="most-popular__title">Most Popular</div>
         <div class="most-popular__video" ng-repeat="video in videos">
           <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank" rel="noopener noreferrer">
             <img class="video__img" ng-src={{video.snippet.thumbnails.medium.url}} alt="Video Image" />

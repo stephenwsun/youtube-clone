@@ -364,14 +364,18 @@ section#content-wrapper {
   margin-top: 56px;
   margin-left: 240px; }
 
-section#most-popular .most-popular__title {
-  font-size: 16px; }
-
 section#most-popular .most-popular__wrapper {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  max-width: calc(100vw - 240px); }
+  max-width: calc(100vw - 240px);
+  padding: 20px 40px; }
+
+section#most-popular .most-popular__title {
+  flex: 0 0 100%;
+  padding: 0 0 30px 10px;
+  font-size: 16px;
+  font-weight: 700; }
 
 section#most-popular .most-popular__video {
   width: 220px;

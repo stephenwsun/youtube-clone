@@ -17,20 +17,23 @@ section#content-wrapper {
 }
 
 section#most-popular {
-  .most-popular__title {
-    font-size: 16px;
-  }
-
   .most-popular__wrapper {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     max-width: calc(100vw - 240px);
+    padding: 20px 40px;
+  }
+
+  .most-popular__title {
+    flex: 0 0 100%;
+    padding: 0 0 30px 10px;
+    font-size: 16px;
+    font-weight: 700;
   }
 
   .most-popular__video {
     width: 220px;
-    // padding: 10px;
     margin-bottom: 25px;
 
     .video__img {
