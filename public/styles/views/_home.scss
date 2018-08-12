@@ -1,12 +1,60 @@
+.home-wrapper {
+  display: flex;
+}
+
+.side-nav {
+  position: fixed;
+  width: 240px;
+  height: 100%;
+  background-color: $lightblack;
+}
+
+section#content-wrapper {
+  margin-left: 240px;
+}
+
 section#most-popular {
   .most-popular__title {
     font-size: 16px;
   }
 
-  .most-popular__videos {
-    .videos__img {
+  .most-popular__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: calc(100vw - 240px);
+  }
+
+  .most-popular__video {
+    width: 210px;
+    padding: 10px;
+    margin-bottom: 25px;
+
+    .video__img {
       width: 210px;
       font-weight: 700;
     }
+
+    .video__title {
+      width: 210px;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .video__channel-name {
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .video__view-count,
+    .video__create-date {
+      font-size: 13px;
+    }
   }
+}
+
+section#channels {
+  display: flex;
 }

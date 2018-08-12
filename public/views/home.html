@@ -1,19 +1,28 @@
-<div ng-controller="VideoController" ng-init="getChannelData()">
+<div class="home-wrapper" ng-controller="VideoController" ng-init="getChannelData()">
+  <div class="side-nav">
+    hello
+  </div>
 
-  <section id="most-popular">
-    <div class="most-popular__title">Most Popular</div>
-    <a class="most-popular__videos" href="https://www.youtube.com/watch?v={{video.id}}" target="_blank" rel="noopener noreferrer"
-      ng-repeat="video in videos">
-      <img class="videos__img" ng-src={{video.snippet.thumbnails.medium.url}} alt="Video Image" />
-      <h1>{{video.snippet.title}}</h1>
-      <h3>{{video.snippet.channelTitle}}</h3>
-      <div>{{video.statistics.viewCount}}</div>
-      <div>{{video.snippet.publishedAt}}</div>
-    </a>
+  <section id="content-wrapper">
+    <section id="most-popular">
+      <div class="most-popular__title">Most Popular</div>
+      <div class="most-popular__wrapper">
+        <div class="most-popular__video" ng-repeat="video in videos">
+          <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank" rel="noopener noreferrer">
+            <img class="video__img" ng-src={{video.snippet.thumbnails.medium.url}} alt="Video Image" />
+          </a>
+          <h1 class="video__title">{{video.snippet.title}}</h1>
+          <h3 class="video__channel-name">{{video.snippet.channelTitle}}</h3>
+          <div class="video__view-count">{{video.statistics.viewCount}} views</div>
+          <div class="video__create-date">{{video.snippet.publishedAt}}</div>
+        </div>
+      </div>
+    </section>
 
+    <section id="channels">
+      <img ng-src={{channel.snippet.thumbnails.medium.url}} alt="Channel Image" ng-repeat="channel in channels" />
+    </section>
   </section>
 
-  <div ng-repeat="channel in channels">
-    <img ng-src={{channel.snippet.thumbnails.medium.url}} alt="Channel Image" />
-  </div>
+
 </div>
