@@ -4,13 +4,20 @@
   "description": "YouTube Clone",
   "main": "app.js",
   "scripts": {
-    "start": "node ./server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --watch --include-path sass ./public/styles/main.scss ./public/styles/main.css"
   },
   "author": "Stephen Sun",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^6.0.0",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.3"
   }
 }

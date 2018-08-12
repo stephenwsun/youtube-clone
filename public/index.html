@@ -2,14 +2,42 @@
 <html lang="en" ng-app="YoutubeClone">
 
 <head>
-  <title>YouTube Clone</title>
+  <title>YouTube Dark</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet" />
   <base href="/" />
 </head>
 
+<nav id="top-nav">
+  <div class="top-nav__left">
+    <ng-include class="left__hamburger-icon" src="'images/top-nav/hamburger.svg'"></ng-include>
+    <ng-include src="'images/top-nav/youtube.svg'"></ng-include>
+  </div>
+  <div class="top-nav__center">
+    <div class="middle__search">
+      <form id="search-form">
+        <input class="form__input" type="text" placeholder="Search" />
+        <button class="form__button" type="submit">
+          <ng-include src="'images/top-nav/search.svg'"></ng-include>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="top-nav__right">
+    <ul class="right__menu">
+      <ng-include class="menu__broadcast-icon" src="'images/top-nav/broadcast.svg'"></ng-include>
+      <ng-include class="menu__grid-icon" src="'images/top-nav/grid.svg'"></ng-include>
+      <ng-include class="menu__messenger-icon" src="'images/top-nav/messenger.svg'"></ng-include>
+      <ng-include class="menu__bell-icon" src="'images/top-nav/bell.svg'"></ng-include>
+    </ul>
+    <img class="right__avatar" src="https://yt3.ggpht.com/-IoG4KAdl9fw/AAAAAAAAAAI/AAAAAAAAAAA/DFSDrtSWR74/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+      alt="Avatar" />
+  </div>
+</nav>
+
 <body ng-controller="VideoController">
-  Hello
   <div ng-view></div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
