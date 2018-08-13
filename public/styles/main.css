@@ -358,6 +358,13 @@ nav#top-nav {
   height: 100%;
   margin-top: 56px;
   background: #232323; }
+  .side-nav .side-nav__main {
+    display: flex;
+    flex-direction: column; }
+    .side-nav .side-nav__main .main__home,
+    .side-nav .side-nav__main .main__trending,
+    .side-nav .side-nav__main .main__subscriptions {
+      display: flex; }
 
 section#content-wrapper {
   width: 100%;
