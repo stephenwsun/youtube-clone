@@ -297,6 +297,12 @@ template {
 [hidden] {
   display: none; }
 
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 body {
   color: #e5e5e5;
   background-color: #141414;
@@ -307,13 +313,12 @@ nav#top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 56px;
+  padding: 0 30px;
   background: #1C1C1C; }
-  nav#top-nav .top-nav__left {
-    padding-left: 30px; }
-    nav#top-nav .top-nav__left .left__hamburger-icon {
-      margin-right: 20px; }
+  nav#top-nav .top-nav__left .left__hamburger-icon {
+    margin-right: 20px; }
   nav#top-nav .top-nav__center #search-form {
     display: flex; }
     nav#top-nav .top-nav__center #search-form .form__input {
@@ -336,8 +341,7 @@ nav#top-nav {
       border-radius: 0 2px 2px 0; }
   nav#top-nav .top-nav__right {
     display: flex;
-    height: 56px;
-    padding-right: 30px; }
+    height: 56px; }
     nav#top-nav .top-nav__right .right__menu .menu__grid-icon,
     nav#top-nav .top-nav__right .right__menu .menu__messenger-icon,
     nav#top-nav .top-nav__right .right__menu .menu__bell-icon {
@@ -360,11 +364,37 @@ nav#top-nav {
   background: #232323; }
   .side-nav .side-nav__main {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #2E2E2E; }
     .side-nav .side-nav__main .main__home,
     .side-nav .side-nav__main .main__trending,
     .side-nav .side-nav__main .main__subscriptions {
-      display: flex; }
+      display: flex;
+      height: 40px;
+      padding-left: 29px;
+      color: #DDE0E3;
+      background: #232323;
+      border: 1px solid #232323; }
+      .side-nav .side-nav__main .main__home .home__title,
+      .side-nav .side-nav__main .main__home .trending__title,
+      .side-nav .side-nav__main .main__home .subscriptions__title,
+      .side-nav .side-nav__main .main__trending .home__title,
+      .side-nav .side-nav__main .main__trending .trending__title,
+      .side-nav .side-nav__main .main__trending .subscriptions__title,
+      .side-nav .side-nav__main .main__subscriptions .home__title,
+      .side-nav .side-nav__main .main__subscriptions .trending__title,
+      .side-nav .side-nav__main .main__subscriptions .subscriptions__title {
+        line-height: 1.9em;
+        margin-left: 25px;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+  .side-nav .side-nav__library .library__title {
+    color: #888888;
+    font-size: 14px;
+    text-transform: uppercase; }
 
 section#content-wrapper {
   width: 100%;
@@ -397,13 +427,13 @@ section#most-popular .most-popular__video {
     overflow: hidden;
     text-overflow: ellipsis; }
   section#most-popular .most-popular__video .video__channel-name {
-    color: #888880;
+    color: #888888;
     font-size: 13px;
     font-weight: 400; }
   section#most-popular .most-popular__video .video__view-count,
   section#most-popular .most-popular__video .video__like-count {
     display: inline-block;
-    color: #888880;
+    color: #888888;
     font-size: 13px; }
 
 section#channels {
