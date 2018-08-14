@@ -24,6 +24,8 @@
       color: #DDE0E3;
       background: $darkblack;
       border: 1px solid $darkblack;
+      outline: none;
+      cursor: pointer;
 
       &:hover {
         background: lighten($darkblack,15%);
@@ -50,14 +52,19 @@
 
     .library__title {
       height: 33px;
+      padding-top: 8px;
       padding-left: 30px;
-      color: $charcoal;
       background: $darkblack;
       font-size: 14px;
       font-weight: 700;
       text-align: left;
       text-transform: uppercase;
       border: 1px solid $darkblack;
+
+      .library__link {
+        color: $charcoal;
+        text-decoration: none;
+      }
     }
 
     .library__history,
@@ -69,6 +76,8 @@
       color: #DDE0E3;
       background: $darkblack;
       border: 1px solid $darkblack;
+      outline: none;
+      cursor: pointer;
 
       &:hover {
         background: lighten($darkblack,15%);
@@ -101,8 +110,9 @@ section#most-popular {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    max-width: calc(100vw - 240px);
+    max-width: calc(6 * 220px);
     padding: 20px 40px;
+    margin: 0 auto;
   }
 
   .most-popular__title {
@@ -146,4 +156,12 @@ section#most-popular {
 
 section#channels {
   display: flex;
+
+  .channel__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: calc(100vw - 240px);
+    padding: 20px 40px;
+  }
 }

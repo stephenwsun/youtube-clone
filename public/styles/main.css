@@ -375,7 +375,9 @@ nav#top-nav {
       padding-left: 29px;
       color: #DDE0E3;
       background: #1C1C1C;
-      border: 1px solid #1C1C1C; }
+      border: 1px solid #1C1C1C;
+      outline: none;
+      cursor: pointer; }
       .side-nav .side-nav__main .main__home:hover,
       .side-nav .side-nav__main .main__trending:hover,
       .side-nav .side-nav__main .main__subscriptions:hover {
@@ -402,14 +404,17 @@ nav#top-nav {
     border-bottom: 1px solid #2E2E2E; }
     .side-nav .side-nav__library .library__title {
       height: 33px;
+      padding-top: 8px;
       padding-left: 30px;
-      color: #888888;
       background: #1C1C1C;
       font-size: 14px;
       font-weight: 700;
       text-align: left;
       text-transform: uppercase;
       border: 1px solid #1C1C1C; }
+      .side-nav .side-nav__library .library__title .library__link {
+        color: #888888;
+        text-decoration: none; }
     .side-nav .side-nav__library .library__history,
     .side-nav .side-nav__library .library__watch-later,
     .side-nav .side-nav__library .library__liked-videos {
@@ -418,7 +423,9 @@ nav#top-nav {
       padding-left: 29px;
       color: #DDE0E3;
       background: #1C1C1C;
-      border: 1px solid #1C1C1C; }
+      border: 1px solid #1C1C1C;
+      outline: none;
+      cursor: pointer; }
       .side-nav .side-nav__library .library__history:hover,
       .side-nav .side-nav__library .library__watch-later:hover,
       .side-nav .side-nav__library .library__liked-videos:hover {
@@ -448,8 +455,9 @@ section#most-popular .most-popular__wrapper {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  max-width: calc(100vw - 240px);
-  padding: 20px 40px; }
+  max-width: calc(6 * 220px);
+  padding: 20px 40px;
+  margin: 0 auto; }
 
 section#most-popular .most-popular__title {
   flex: 0 0 100%;
@@ -481,3 +489,9 @@ section#most-popular .most-popular__video {
 
 section#channels {
   display: flex; }
+  section#channels .channel__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: calc(100vw - 240px);
+    padding: 20px 40px; }

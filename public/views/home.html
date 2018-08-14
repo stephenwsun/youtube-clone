@@ -15,8 +15,9 @@
       </button>
     </div>
     <div class="side-nav__library">
-
-      <button class="library__title">Library</button>
+      <div class="library__title">
+        <a href="#" class="library__link">Library</a>
+      </div>
       <button class="library__history">
         <ng-include src="'../images/side-nav/history.svg'"></ng-include>
         <div class="history__title">Home</div>
@@ -29,9 +30,6 @@
         <ng-include src="'../images/side-nav/like.svg'"></ng-include>
         <div class="liked-videos__title">Liked videos</div>
       </button>
-
-
-
     </div>
   </div>
 
@@ -51,9 +49,16 @@
       </div>
     </section>
 
-    <!-- <section id="channels">
-      <img ng-src={{channel.snippet.thumbnails.medium.url}} alt="Channel Image" ng-repeat="channel in channels" />
-    </section> -->
+    <section id="channels">
+      <div class="channel__wrapper">
+        <div class="channel__title">Coding</div>
+        <div class="channel__image" ng-repeat="channel in channels">
+          <img ng-src={{channel.snippet.thumbnails.medium.url}} alt="Channel Image" />
+          <h3 class="channel__channel-name">{{channel.snippet.channelTitle}}</h3>
+          <div class="channel__description">{{channel.snippet.description}} views •</div>
+        </div>
+      </div>
+    </section>
   </section>
 
 
