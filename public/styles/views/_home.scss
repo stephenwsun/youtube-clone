@@ -7,18 +7,87 @@
   width: 240px;
   height: 100%;
   margin-top: 56px;
-  background: $lightblack;
+  background: $darkblack;
 
   .side-nav__main {
     display: flex;
     flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #2E2E2E;
 
     .main__home,
     .main__trending,
     .main__subscriptions {
       display: flex;
+      height: 40px;
+      padding-left: 29px;
+      color: #DDE0E3;
+      background: $darkblack;
+      border: 1px solid $darkblack;
+
+      &:hover {
+        background: lighten($darkblack,15%);
+      }
+
+      .home__title,
+      .trending__title,
+      .subscriptions__title {
+        line-height: 1.9em;
+        margin-left: 25px;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
   }
+
+  .side-nav__library {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #2E2E2E;
+
+    .library__title {
+      height: 33px;
+      padding-left: 30px;
+      color: $charcoal;
+      background: $darkblack;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+      text-transform: uppercase;
+      border: 1px solid $darkblack;
+    }
+
+    .library__history,
+    .library__watch-later,
+    .library__liked-videos {
+      display: flex;
+      height: 40px;
+      padding-left: 29px;
+      color: #DDE0E3;
+      background: $darkblack;
+      border: 1px solid $darkblack;
+
+      &:hover {
+        background: lighten($darkblack,15%);
+      }
+
+      .history__title,
+      .watch-later__title,
+      .liked-videos__title {
+        line-height: 1.9em;
+        margin-left: 25px;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  
 }
 
 section#content-wrapper {

@@ -297,6 +297,12 @@ template {
 [hidden] {
   display: none; }
 
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 body {
   color: #e5e5e5;
   background-color: #141414;
@@ -307,13 +313,12 @@ nav#top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 56px;
-  background: #1C1C1C; }
-  nav#top-nav .top-nav__left {
-    padding-left: 30px; }
-    nav#top-nav .top-nav__left .left__hamburger-icon {
-      margin-right: 20px; }
+  padding: 0 30px;
+  background: #232323; }
+  nav#top-nav .top-nav__left .left__hamburger-icon {
+    margin-right: 20px; }
   nav#top-nav .top-nav__center #search-form {
     display: flex; }
     nav#top-nav .top-nav__center #search-form .form__input {
@@ -336,8 +341,7 @@ nav#top-nav {
       border-radius: 0 2px 2px 0; }
   nav#top-nav .top-nav__right {
     display: flex;
-    height: 56px;
-    padding-right: 30px; }
+    height: 56px; }
     nav#top-nav .top-nav__right .right__menu .menu__grid-icon,
     nav#top-nav .top-nav__right .right__menu .menu__messenger-icon,
     nav#top-nav .top-nav__right .right__menu .menu__bell-icon {
@@ -357,14 +361,83 @@ nav#top-nav {
   width: 240px;
   height: 100%;
   margin-top: 56px;
-  background: #232323; }
+  background: #1C1C1C; }
   .side-nav .side-nav__main {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #2E2E2E; }
     .side-nav .side-nav__main .main__home,
     .side-nav .side-nav__main .main__trending,
     .side-nav .side-nav__main .main__subscriptions {
-      display: flex; }
+      display: flex;
+      height: 40px;
+      padding-left: 29px;
+      color: #DDE0E3;
+      background: #1C1C1C;
+      border: 1px solid #1C1C1C; }
+      .side-nav .side-nav__main .main__home:hover,
+      .side-nav .side-nav__main .main__trending:hover,
+      .side-nav .side-nav__main .main__subscriptions:hover {
+        background: #424242; }
+      .side-nav .side-nav__main .main__home .home__title,
+      .side-nav .side-nav__main .main__home .trending__title,
+      .side-nav .side-nav__main .main__home .subscriptions__title,
+      .side-nav .side-nav__main .main__trending .home__title,
+      .side-nav .side-nav__main .main__trending .trending__title,
+      .side-nav .side-nav__main .main__trending .subscriptions__title,
+      .side-nav .side-nav__main .main__subscriptions .home__title,
+      .side-nav .side-nav__main .main__subscriptions .trending__title,
+      .side-nav .side-nav__main .main__subscriptions .subscriptions__title {
+        line-height: 1.9em;
+        margin-left: 25px;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+  .side-nav .side-nav__library {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #2E2E2E; }
+    .side-nav .side-nav__library .library__title {
+      height: 33px;
+      padding-left: 30px;
+      color: #888888;
+      background: #1C1C1C;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+      text-transform: uppercase;
+      border: 1px solid #1C1C1C; }
+    .side-nav .side-nav__library .library__history,
+    .side-nav .side-nav__library .library__watch-later,
+    .side-nav .side-nav__library .library__liked-videos {
+      display: flex;
+      height: 40px;
+      padding-left: 29px;
+      color: #DDE0E3;
+      background: #1C1C1C;
+      border: 1px solid #1C1C1C; }
+      .side-nav .side-nav__library .library__history:hover,
+      .side-nav .side-nav__library .library__watch-later:hover,
+      .side-nav .side-nav__library .library__liked-videos:hover {
+        background: #424242; }
+      .side-nav .side-nav__library .library__history .history__title,
+      .side-nav .side-nav__library .library__history .watch-later__title,
+      .side-nav .side-nav__library .library__history .liked-videos__title,
+      .side-nav .side-nav__library .library__watch-later .history__title,
+      .side-nav .side-nav__library .library__watch-later .watch-later__title,
+      .side-nav .side-nav__library .library__watch-later .liked-videos__title,
+      .side-nav .side-nav__library .library__liked-videos .history__title,
+      .side-nav .side-nav__library .library__liked-videos .watch-later__title,
+      .side-nav .side-nav__library .library__liked-videos .liked-videos__title {
+        line-height: 1.9em;
+        margin-left: 25px;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
 
 section#content-wrapper {
   width: 100%;
@@ -397,13 +470,13 @@ section#most-popular .most-popular__video {
     overflow: hidden;
     text-overflow: ellipsis; }
   section#most-popular .most-popular__video .video__channel-name {
-    color: #888880;
+    color: #888888;
     font-size: 13px;
     font-weight: 400; }
   section#most-popular .most-popular__video .video__view-count,
   section#most-popular .most-popular__video .video__like-count {
     display: inline-block;
-    color: #888880;
+    color: #888888;
     font-size: 13px; }
 
 section#channels {
