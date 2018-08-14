@@ -493,7 +493,8 @@ section#channels {
     justify-content: space-evenly;
     flex-wrap: wrap;
     max-width: calc(6 * 220px);
-    padding: 20px 40px; }
+    padding: 20px 40px;
+    margin: 0 auto; }
   section#channels .channel__title {
     flex: 0 0 100%;
     padding: 0 0 25px 10px;
