@@ -52,10 +52,10 @@
     <section id="channels">
       <div class="channel__wrapper">
         <div class="channel__title">Coding</div>
-        <div class="channel__image" ng-repeat="channel in channels">
-          <img ng-src={{channel.snippet.thumbnails.medium.url}} alt="Channel Image" />
-          <h3 class="channel__channel-name">{{channel.snippet.channelTitle}}</h3>
-          <div class="channel__description">{{channel.snippet.description}} views •</div>
+        <div class="channel__info" ng-repeat="channel in channels">
+          <img class="info__img" ng-src={{channel.snippet.thumbnails.medium.url}} alt="Channel Image" />
+          <h3 class="info__channel-name">{{channel.snippet.channelTitle}}</h3>
+          <div class="info__description">{{channel.snippet.description}}</div>
         </div>
       </div>
     </section>

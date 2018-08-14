@@ -469,8 +469,7 @@ section#most-popular .most-popular__video {
   width: 220px;
   margin-bottom: 25px; }
   section#most-popular .most-popular__video .video__img {
-    width: 220px;
-    font-weight: 700; }
+    width: 220px; }
   section#most-popular .most-popular__video .video__title {
     width: 220px;
     font-size: 14px;
@@ -493,5 +492,21 @@ section#channels {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    max-width: calc(100vw - 240px);
+    max-width: calc(6 * 220px);
     padding: 20px 40px; }
+  section#channels .channel__title {
+    flex: 0 0 100%;
+    padding: 0 0 25px 10px;
+    font-size: 16px;
+    font-weight: 700; }
+  section#channels .channel__info {
+    width: 220px;
+    margin-bottom: 25px; }
+    section#channels .channel__info .info__img {
+      width: 220px; }
+    section#channels .channel__info .info__channel-name {
+      width: 220px;
+      font-size: 14px; }
+    section#channels .channel__info .info__description {
+      color: #888888;
+      font-size: 13px; }

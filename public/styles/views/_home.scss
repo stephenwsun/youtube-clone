@@ -128,7 +128,6 @@ section#most-popular {
 
     .video__img {
       width: 220px;
-      font-weight: 700;
     }
 
     .video__title {
@@ -161,7 +160,33 @@ section#channels {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    max-width: calc(100vw - 240px);
+    max-width: calc(6 * 220px);
     padding: 20px 40px;
+  }
+
+  .channel__title {
+    flex: 0 0 100%;
+    padding: 0 0 25px 10px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .channel__info {
+    width: 220px;
+    margin-bottom: 25px;
+
+    .info__img {
+      width: 220px;
+    }
+
+    .info__channel-name {
+      width: 220px;
+      font-size: 14px;
+    }
+
+    .info__description {
+      color: $charcoal;
+      font-size: 13px;
+    }
   }
 }
