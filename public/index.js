@@ -33,9 +33,11 @@ youtubeClone.controller('HomeController', function($scope, $http) {
   }
 });
 
-youtubeClone.controller('VideoController', function($scope, $http, $routeParams) {
+youtubeClone.controller('VideoController', function($scope, $http, $routeParams, $sce) {
   const routeId = $routeParams.id;
   
+  $scope.url = $sce.trustAsResourceUrl(`//www.youtube.com/embed/${routeId}?autoplay=1&mute=1`);
+
   $scope.getVideoData = function() {
     $http.get(`/api/videos/${routeId}`).then(res => {
       $scope.videos = res.data.items;
