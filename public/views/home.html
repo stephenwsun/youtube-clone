@@ -38,7 +38,7 @@
       <div class="most-popular__wrapper">
         <div class="most-popular__title">Most Popular</div>
         <div class="most-popular__video" ng-repeat="video in videos">
-          <a ng-href="/videos/{{video.id}}" target="_blank" rel="noopener noreferrer">
+          <a ng-href="/videos/{{video.id}}">
             <img class="video__img" ng-src={{video.snippet.thumbnails.medium.url}} alt="Video Image" />
           </a>
           <h1 class="video__title">{{video.snippet.title}}</h1>

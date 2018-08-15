@@ -1,3 +1,3 @@
-<div>
-
+<div ng-controller="VideoController" ng-init="getVideoData();">
+  <div ng-bind-html="videos[0].player.embedHtml | ashtml"></div>
 </div>

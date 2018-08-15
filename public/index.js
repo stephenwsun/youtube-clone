@@ -15,6 +15,10 @@ youtubeClone.config(['$routeProvider', '$locationProvider', function($routeProvi
     }
 }]);
 
+youtubeClone.filter('ashtml', function($sce) {
+  return $sce.trustAsHtml;
+});
+
 youtubeClone.controller('HomeController', function($scope, $http) {
   $scope.getHomeData = function() {
     $http.get('/api/videos').then(res => {
@@ -29,11 +33,13 @@ youtubeClone.controller('HomeController', function($scope, $http) {
   }
 });
 
-youtubeClone.controller('VideoController', function($scope, $http) {
+youtubeClone.controller('VideoController', function($scope, $http, $routeParams) {
+  const routeId = $routeParams.id;
+  
   $scope.getVideoData = function() {
-    $http.get('/api/videos').then(res => {
-      $scope.video = res.data.items;
-      console.log($scope.video);
+    $http.get(`/api/videos/${routeId}`).then(res => {
+      $scope.videos = res.data.items;
+      console.log($scope.videos);
     });
   }
 })
