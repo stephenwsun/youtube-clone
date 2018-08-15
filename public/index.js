@@ -4,6 +4,10 @@ youtubeClone.config(['$routeProvider', '$locationProvider', function($routeProvi
   $routeProvider
     .when('/', {
       templateUrl: 'views/home.html',
+      controller: 'HomeController'
+    })
+    .when('/videos/:id', {
+      templateUrl: 'views/video.html',
       controller: 'VideoController'
     })
     if(window.history && window.history.pushState) {
@@ -11,8 +15,8 @@ youtubeClone.config(['$routeProvider', '$locationProvider', function($routeProvi
     }
 }]);
 
-youtubeClone.controller('VideoController', function($scope, $http) {
-  $scope.getChannelData = function() {
+youtubeClone.controller('HomeController', function($scope, $http) {
+  $scope.getHomeData = function() {
     $http.get('/api/videos').then(res => {
       $scope.videos = res.data.items;
       console.log($scope.videos);
@@ -24,3 +28,12 @@ youtubeClone.controller('VideoController', function($scope, $http) {
     });
   }
 });
+
+youtubeClone.controller('VideoController', function($scope, $http) {
+  $scope.getVideoData = function() {
+    $http.get('/api/videos').then(res => {
+      $scope.video = res.data.items;
+      console.log($scope.video);
+    });
+  }
+})
