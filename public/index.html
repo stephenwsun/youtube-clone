@@ -13,7 +13,9 @@
 <nav id="top-nav">
   <div class="top-nav__left">
     <ng-include class="left__hamburger-icon" src="'images/top-nav/hamburger.svg'"></ng-include>
-    <ng-include src="'images/top-nav/youtube.svg'"></ng-include>
+    <a ng-href="/">
+      <ng-include src="'images/top-nav/youtube.svg'"></ng-include>
+    </a>
   </div>
   <div class="top-nav__center">
     <div class="middle__search">
@@ -37,7 +39,7 @@
   </div>
 </nav>
 
-<body ng-controller="VideoController">
+<body>
   <div ng-view></div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
