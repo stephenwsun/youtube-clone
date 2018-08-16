@@ -45,7 +45,12 @@ exports.channels = function(req, res) {
 exports.video_details = function(req, res) {
   const options = {
     method: 'GET',
-    url: `https://www.googleapis.com/youtube/v3/videos?part=player&id=${req.params.id}&key=${process.env.YOUTUBE_DATA_KEY}`,
+    url: 'https://www.googleapis.com/youtube/v3/videos',
+    qs: {
+      id: req.params.id,
+      part: 'snippet,contentDetails,statistics',
+      key: process.env.YOUTUBE_DATA_KEY
+    },
     json: true
   };
 
