@@ -36,12 +36,17 @@ youtubeClone.controller('HomeController', function($scope, $http) {
 youtubeClone.controller('VideoController', function($scope, $http, $routeParams, $sce) {
   const routeId = $routeParams.id;
   
+  
   $scope.url = $sce.trustAsResourceUrl(`//www.youtube.com/embed/${routeId}?autoplay=1&mute=1`);
 
   $scope.getVideoData = function() {
     $http.get(`/api/videos/${routeId}`).then(res => {
-      $scope.videos = res.data.items;
-      console.log($scope.videos);
+      const date = new Date(res.data.items[0].snippet.publishedAt);
+
+      $scope.video = res.data.items;
+      $scope.publishDate = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+      console.log($scope.video);
+      console.log(publishDate);
     });
   }
 })
