@@ -1,10 +1,33 @@
 <div ng-controller="VideoController" ng-init="getVideoData();">
   <section id="video">
-    <iframe src="{{url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-    <div>{{video[0].snippet.title}}</div>
-    <div>{{video[0].statistics.viewCount}} views</div>
-    <div>{{video[0].statistics.likeCount}}</div>
-    <div>{{video[0].statistics.dislikeCount}}</div>
+    <iframe class="video__iframe" src="{{url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+    <h1 class="video__title">{{video[0].snippet.title}}</h1>
+    <div class="video__details">
+      <div class="details__views">{{video[0].statistics.viewCount}} views</div>
+      <div class="details__interactions">
+        <div class="interactions__upvote">
+          <ng-include class="upvote__img" src="'../images/video/upvote.svg'"></ng-include>
+          <div class="upvote__count">{{video[0].statistics.likeCount}}</div>
+        </div>
+        <div class="interactions__downvote">
+          <ng-include class="downvote__img" src="'../images/video/downvote.svg'"></ng-include>
+          <div class="downvote__count">{{video[0].statistics.dislikeCount}}</div>
+        </div>
+        <div class="interactions__share">
+          <ng-include class="share__img" src="'../images/video/share.svg'"></ng-include>
+          <div class="share__text">share</div>
+        </div>
+        <div class="interactions__add">
+          <ng-include class="add__img" src="'../images/video/add.svg'"></ng-include>
+        </div>
+        <div class="interactions__more">
+          <ng-include class="more__img" src="'../images/video/dots.svg'"></ng-include>
+        </div>
+      </div>
+    </div>
+
+
+
   </section>
 
 
