@@ -1,12 +1,15 @@
 <div ng-controller="VideoController" ng-init="getVideoData();">
-  <!-- <div ng-bind-html="videos[0].player.embedHtml | ashtml"></div> -->
+  <section id="video">
+    <iframe src="{{url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+    <div>{{video[0].snippet.title}}</div>
+    <div>{{video[0].statistics.viewCount}} views</div>
+    <div>{{video[0].statistics.likeCount}}</div>
+    <div>{{video[0].statistics.dislikeCount}}</div>
+  </section>
 
-  <iframe src="{{url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
-  <div>{{video[0].snippet.title}}</div>
-  <div>{{video[0].statistics.viewCount}} views</div>
-  <div>{{video[0].statistics.likeCount}}</div>
-  <div>{{video[0].statistics.dislikeCount}}</div>
+
+
 
   <div>{{publishDate}}</div>
   <div>{{video[0].snippet.description}}</div>
