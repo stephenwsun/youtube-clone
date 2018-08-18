@@ -3,9 +3,7 @@
 section#video {
   width:70vw;
   max-width: 1280px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #2E2E2E;
-  
+
   .video__iframe {
     width:70vw;
     height:40vw;
@@ -21,7 +19,9 @@ section#video {
   .video__details {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 15px;
     color: $charcoal;
+    border-bottom: 1px solid #2E2E2E;
 
     .details__views {
       font-size: 16px;
@@ -58,6 +58,57 @@ section#video {
         font-size: 13px;
         text-transform: uppercase;
       }
+    }
+  }
+
+  .channel__details {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    color: $charcoal;
+    border-bottom: 1px solid #2E2E2E;
+
+    .details__channel-info {
+      display: flex;
+
+      .channel-info__avatar {
+        vertical-align: middle;
+        width: 48px;
+        height: 48px;
+        margin-right: 15px;
+        border-radius: 50%;
+      }
+
+      .channel-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.4;
+        padding-top: 5px;
+      }
+
+      .channel-info__name {
+        color: $gray;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .channel-info__video-publish {
+        font-size: 13px;
+      }
+    }
+
+    .details__channel-subscribe {
+
+      .channel-subscribe__btn {
+        padding: 10px 16px;
+        color: $gray;
+        background-color: $red;
+        font-size: 14px;
+        text-transform: uppercase;
+        border: 1px solid $red;
+        outline: 0;
+      }
+      
     }
   }
 }
