@@ -25,15 +25,20 @@
         </div>
       </div>
     </div>
-
-
+    <div class="channel__details">
+      <div class="details__channel-info">
+        <img class="channel-info__avatar" ng-src={{channel[0].snippet.thumbnails.default.url}} alt="Avatar" />
+        <div class="channel-info-wrapper">
+          <div class="channel-info__name">{{channel[0].snippet.title}}</div>
+          <div class="channel-info__video-publish"> Published on {{publishDate}}</div>
+        </div>
+      </div>
+      <div class="details__channel-subscribe">
+        <button class="channel-subscribe__btn">subscribe {{channel[0].statistics.subscriberCount}}</button>
+      </div>
+    </div>
 
   </section>
-
-
-
-
-
-  <div>{{publishDate}}</div>
-  <div>{{video[0].snippet.description}}</div>
 </div>
+
+<div>{{video[0].snippet.description}}</div>
