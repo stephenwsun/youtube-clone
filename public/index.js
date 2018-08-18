@@ -46,7 +46,11 @@ youtubeClone.controller('VideoController', function($scope, $http, $routeParams,
       $scope.video = res.data.items;
       $scope.publishDate = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
       console.log($scope.video);
-      console.log(publishDate);
+
+      $http.get(`/api/channels/${$scope.video[0].snippet.channelId}`).then(res => {
+        $scope.channel = res.data.items;
+        console.log($scope.channel);
+      });
     });
   }
 })
