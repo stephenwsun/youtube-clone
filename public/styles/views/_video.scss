@@ -33,20 +33,27 @@ section#video {
       .interactions__upvote,
       .interactions__downvote,
       .interactions__share,
-      .interactions__add,
-      .interactions__more {
+      .interactions__add {
         display: flex;
         margin-right: 20px;
+      }
+
+      .interactions__more {
+        display: flex;
       }
 
       .upvote__img,
       .downvote__img,
       .share__img,
-      .add__img,
-      .more__img {
+      .add__img {
         width: 20px;
         height: 20px;
         margin-right: 8px;
+      }
+
+      .more__img {
+        width: 20px;
+        height: 20px;
       }
 
       .upvote__count,
