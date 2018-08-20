@@ -64,6 +64,7 @@ section#video {
   .channel__details {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 15px 0;
     color: $charcoal;
     border-bottom: 1px solid #2E2E2E;
@@ -108,7 +109,14 @@ section#video {
         border: 1px solid $red;
         outline: 0;
       }
-      
+    }
+
+    .details__channel-description {
+      flex-basis: 100%;
+      margin-left: 63px;
+      margin-top: 15px;
+      color: $gray;
+      white-space: pre-line;
     }
   }
 }
