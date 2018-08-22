@@ -43,13 +43,14 @@
   <section id="video-feed">
     <div class="video-feed-wrapper">
       <div class="video-feed__title">Up Next</div>
-      <div class="video-feed__related-videos" ng-repeat="video in relatedVideos">
-        <img class="related-videos__thumbnail" ng-src={{video.snippet.thumbnails.medium.url}} alt="thumbnail" />
-        <div>{{video.snippet.title}}</div>
-        <div>{{video.snippet.channelTitle}}</div>
-        <div>Recommended for you</div>
+      <div class="video-feed__related-video" ng-repeat="video in relatedVideos">
+        <img class="related-video__thumbnail" ng-src={{video.snippet.thumbnails.medium.url}} alt="thumbnail" />
+        <div class="related-video__details">
+          <div class="details__video-title">{{video.snippet.title}}</div>
+          <div class="details__channel-name">{{video.snippet.channelTitle}}</div>
+          <div class="details__recommended">Recommended for you</div>
+        </div>
       </div>
     </div>
-
   </section>
 </div>
