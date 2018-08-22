@@ -33,9 +33,8 @@ youtubeClone.controller('HomeController', function($scope, $http) {
   }
 });
 
-youtubeClone.controller('VideoController', function($scope, $http, $routeParams, $sce) {
+youtubeClone.controller('VideoController', function($scope, $http, $routeParams, $sce, $q) {
   const routeId = $routeParams.id;
-  
   
   $scope.url = $sce.trustAsResourceUrl(`//www.youtube.com/embed/${routeId}?autoplay=1&mute=1`);
 
@@ -47,10 +46,15 @@ youtubeClone.controller('VideoController', function($scope, $http, $routeParams,
       $scope.publishDate = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
       console.log($scope.video);
 
-      $http.get(`/api/channels/${$scope.video[0].snippet.channelId}`).then(res => {
+      const channelData = $http.get(`/api/channels/${$scope.video[0].snippet.channelId}`).then(res => {
         $scope.channel = res.data.items;
         console.log($scope.channel);
       });
+
+      const relatedVideosData = $http.get(`/api/related-videos/${routeId}`).then(res => {
+        $scope.relatedVideos = res.data.items;
+        console.log($scope.relatedVideos);
+      })
     });
   }
 })
