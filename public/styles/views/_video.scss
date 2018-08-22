@@ -1,3 +1,7 @@
+.video-page-wrapper {
+  display: flex;
+}
+
 section#video {
   width:70vw;
   max-width: 1280px;
@@ -121,6 +125,25 @@ section#video {
       margin-top: 15px;
       color: $gray;
       white-space: pre-line;
+    }
+  }
+}
+
+section#video-feed {
+  width: 30vw;
+
+  .video-feed-wrapper {
+    margin-top: 56px;
+  }
+
+  .video-feed__title {
+    font-size: 16px;
+  }
+
+  .video-feed__related-videos {
+    .related-videos__thumbnail {
+      width: 168px;
+      height: 94px;
     }
   }
 }

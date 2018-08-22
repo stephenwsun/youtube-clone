@@ -23,17 +23,19 @@ youtubeClone.controller('HomeController', function($scope, $http) {
   $scope.getHomeData = function() {
     $http.get('/api/videos').then(res => {
       $scope.videos = res.data.items;
+      console.log('Videos on Home Page');
       console.log($scope.videos);
     });
 
     $http.get('/api/channels').then(res => {
       $scope.channels = res.data.items;
+      console.log('Channels on Home Page');
       console.log($scope.channels);
     });
   }
 });
 
-youtubeClone.controller('VideoController', function($scope, $http, $routeParams, $sce, $q) {
+youtubeClone.controller('VideoController', function($scope, $http, $routeParams, $sce) {
   const routeId = $routeParams.id;
   
   $scope.url = $sce.trustAsResourceUrl(`//www.youtube.com/embed/${routeId}?autoplay=1&mute=1`);
@@ -44,17 +46,20 @@ youtubeClone.controller('VideoController', function($scope, $http, $routeParams,
 
       $scope.video = res.data.items;
       $scope.publishDate = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+      console.log('Video for Video Page');
       console.log($scope.video);
 
-      const channelData = $http.get(`/api/channels/${$scope.video[0].snippet.channelId}`).then(res => {
+      $http.get(`/api/channels/${$scope.video[0].snippet.channelId}`).then(res => {
         $scope.channel = res.data.items;
+        console.log('Channel Data for Video');
         console.log($scope.channel);
       });
 
-      const relatedVideosData = $http.get(`/api/related-videos/${routeId}`).then(res => {
+      $http.get(`/api/related-videos/${routeId}`).then(res => {
         $scope.relatedVideos = res.data.items;
+        console.log('Related Videos');
         console.log($scope.relatedVideos);
-      })
+      });
     });
   }
 })
