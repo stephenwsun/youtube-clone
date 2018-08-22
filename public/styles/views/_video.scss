@@ -1,8 +1,12 @@
-
+.video-page-wrapper {
+  display: flex;
+  padding: 24px 5%;
+}
 
 section#video {
   width:70vw;
   max-width: 1280px;
+  padding-right: 24px;
 
   .video__iframe {
     width:70vw;
@@ -10,6 +14,7 @@ section#video {
     max-width: 1280px;
     max-height: 720px;
     margin-top: 56px;
+    padding-right: 24px;
   }
 
   .video__title {
@@ -106,7 +111,6 @@ section#video {
     }
 
     .details__channel-subscribe {
-
       .channel-subscribe__btn {
         padding: 10px 16px;
         color: $gray;
@@ -124,6 +128,25 @@ section#video {
       margin-top: 15px;
       color: $gray;
       white-space: pre-line;
+    }
+  }
+}
+
+section#video-feed {
+  width: 30vw;
+
+  .video-feed-wrapper {
+    margin-top: 56px;
+  }
+
+  .video-feed__title {
+    font-size: 16px;
+  }
+
+  .video-feed__related-videos {
+    .related-videos__thumbnail {
+      width: 168px;
+      height: 94px;
     }
   }
 }

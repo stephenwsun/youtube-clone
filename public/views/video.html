@@ -1,4 +1,4 @@
-<div ng-controller="VideoController" ng-init="getVideoData();">
+<div class="video-page-wrapper" ng-controller="VideoController" ng-init="getVideoData();">
   <section id="video">
     <iframe class="video__iframe" src="{{url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
     <h1 class="video__title">{{video[0].snippet.title}}</h1>
@@ -40,5 +40,16 @@
     </div>
   </section>
 
-  <section id="video-feed"></section>
+  <section id="video-feed">
+    <div class="video-feed-wrapper">
+      <div class="video-feed__title">Up Next</div>
+      <div class="video-feed__related-videos" ng-repeat="video in relatedVideos">
+        <img class="related-videos__thumbnail" ng-src={{video.snippet.thumbnails.medium.url}} alt="thumbnail" />
+        <div>{{video.snippet.title}}</div>
+        <div>{{video.snippet.channelTitle}}</div>
+        <div>Recommended for you</div>
+      </div>
+    </div>
+
+  </section>
 </div>
