@@ -38,6 +38,21 @@
       </div>
       <div class="details__channel-description">{{video[0].snippet.description}}</div>
     </div>
+
+    <section id="video-comments">
+      <div class="video-comments__comment" ng-repeat="comment in videoComments">
+        <img class="comment__profile-avatar" ng-src={{comment.snippet.topLevelComment.snippet.authorProfileImageUrl}} alt="avatar"
+        />
+        <div class="comment-wrapper">
+          <div class="comment__author">
+            {{comment.snippet.topLevelComment.snippet.authorDisplayName}}
+          </div>
+          <div class="comment__text">
+            {{comment.snippet.topLevelComment.snippet.textOriginal}}
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
 
   <section id="video-feed">
