@@ -60,6 +60,12 @@ youtubeClone.controller('VideoController', function($scope, $http, $routeParams,
         console.log('Related Videos');
         console.log($scope.relatedVideos);
       });
+
+      $http.get(`/api/video-comments/${routeId}`).then(res => {
+        $scope.videoComments = res.data.items;
+        console.log('Video Comments');
+        console.log($scope.videoComments);
+      });
     });
   }
 })
