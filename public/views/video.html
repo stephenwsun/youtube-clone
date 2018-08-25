@@ -40,6 +40,20 @@
     </div>
 
     <section id="video-comments">
+      <div class="video-comments__details">
+        <div class="details__total-comments">
+          50 Comments
+        </div>
+        <div class="details__sort">
+          <ng-include class="sort__img" src="'../images/comment/sort.svg'"></ng-include>
+          <div class="sort__text">sort by</div>
+        </div>
+      </div>
+      <div class="video-comments__add-comment">
+        <img class="add-comment__avatar" src="https://yt3.ggpht.com/-IoG4KAdl9fw/AAAAAAAAAAI/AAAAAAAAAAA/DFSDrtSWR74/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+          alt="Avatar" />
+        <input class="add-comment__input" type="text" placeholder="Add a public comment..." />
+      </div>
       <div class="video-comments__comment" ng-repeat="comment in videoComments">
         <img class="comment__profile-avatar" ng-src={{comment.snippet.topLevelComment.snippet.authorProfileImageUrl}} alt="avatar"
         />
@@ -50,6 +64,16 @@
           <div class="comment__text">
             {{comment.snippet.topLevelComment.snippet.textOriginal}}
           </div>
+          <div class="comment__vote">
+            <div class="vote__upvote">
+              <ng-include class="upvote__img" src="'../images/comment/upvote.svg'"></ng-include>
+              <div class="upvote__like-count">{{comment.snippet.topLevelComment.snippet.likeCount}}</div>
+            </div>
+            <div class="vote__downvote">
+              <ng-include class="downvote__img" src="'../images/comment/downvote.svg'"></ng-include>
+            </div>
+            <div class="vote__reply">reply</div>
+          </div>
         </div>
       </div>
     </section>
@@ -59,9 +83,13 @@
     <div class="video-feed-wrapper">
       <div class="video-feed__title">Up Next</div>
       <div class="video-feed__related-video" ng-repeat="video in relatedVideos">
-        <img class="related-video__thumbnail" ng-src={{video.snippet.thumbnails.medium.url}} alt="thumbnail" />
+        <a ng-href="/videos/{{video.id.videoId}}">
+          <img class="related-video__thumbnail" ng-src={{video.snippet.thumbnails.medium.url}} alt="thumbnail" />
+        </a>
         <div class="related-video__details">
-          <div class="details__video-title">{{video.snippet.title}}</div>
+          <a ng-href="/videos/{{video.id.videoId}}">
+            <div class="details__video-title">{{video.snippet.title}}</div>
+          </a>
           <div class="details__channel-name">{{video.snippet.channelTitle}}</div>
           <div class="details__recommended">Recommended for you</div>
         </div>
