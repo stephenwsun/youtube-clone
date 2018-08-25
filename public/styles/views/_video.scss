@@ -159,6 +159,30 @@ section#video-comments {
     .comment__text {
       font-size: 14px;
     }
+
+    .comment__vote {
+      display: flex;
+
+      .vote__upvote {
+        display: flex;
+  
+        .upvote__img {
+          width: 32px;
+          height: 32px;
+          padding: 8px 8px 8px 0;
+        }
+      }
+  
+      .vote__downvote {
+        display: flex;
+  
+        .downvote__img {
+          width: 32px;
+          height: 32px;
+          padding: 8px;
+        }
+      }
+    } 
   }
 }
 
@@ -198,6 +222,7 @@ section#video-feed {
 
       .details__channel-name,
       .details__recommended {
+        margin-bottom: 3px;
         color: $charcoal;
         font-size:13px;
       }

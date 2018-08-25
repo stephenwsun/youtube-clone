@@ -50,6 +50,15 @@
           <div class="comment__text">
             {{comment.snippet.topLevelComment.snippet.textOriginal}}
           </div>
+          <div class="comment__vote">
+            <div class="vote__upvote">
+              <ng-include class="upvote__img" src="'../images/comment/upvote.svg'"></ng-include>
+              <div class="upvote__like-count">{{comment.snippet.topLevelComment.snippet.likeCount}}</div>
+            </div>
+            <div class="vote__downvote">
+              <ng-include class="downvote__img" src="'../images/comment/downvote.svg'"></ng-include>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -59,7 +68,9 @@
     <div class="video-feed-wrapper">
       <div class="video-feed__title">Up Next</div>
       <div class="video-feed__related-video" ng-repeat="video in relatedVideos">
-        <img class="related-video__thumbnail" ng-src={{video.snippet.thumbnails.medium.url}} alt="thumbnail" />
+        <a ng-href="/videos/{{video.id.videoId}}">
+          <img class="related-video__thumbnail" ng-src={{video.snippet.thumbnails.medium.url}} alt="thumbnail" />
+        </a>
         <div class="related-video__details">
           <div class="details__video-title">{{video.snippet.title}}</div>
           <div class="details__channel-name">{{video.snippet.channelTitle}}</div>
